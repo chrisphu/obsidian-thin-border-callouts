@@ -1,0 +1,65 @@
+/**
+ * Copyright © 2024 Chris Phu
+ * https://github.com/chrisphu/obsidian-thin-border-callouts/blob/main/LICENSE
+ *
+ * Following idiomatic-css style guide at https://github.com/necolas/idiomatic-css. Properties are further grouped
+ * according to Chromium inspector.
+ */
+
+/* ==================================================================================================================
+   OBSIDIAN CSS VARIABLES
+   ================================================================================================================== */
+
+/**
+ * These CSS variables are intrinsically defined by Obsidian. The documentation for these variables are located at
+ * https://docs.obsidian.md/Reference/CSS+variables/CSS+variables
+ */
+
+body { --callout-radius: 0.5em; }
+
+/* ==================================================================================================================
+   CALLOUTS
+   ================================================================================================================== */
+
+/* Overall callout
+   ================================================================================================================== */
+
+/**
+ * Probably should better define the classes rather than using the !important flags.
+ */
+
+div.callout {
+    /* Layout */
+    margin-top: 2em !important;
+    overflow: visible;
+    
+    /* Appearance */
+    background-color: var(--background-primary);
+    border-color: rgb(var(--callout-color));
+    border-style: solid;
+    border-width: 2px;
+}
+
+div.callout-title {
+    /* Layout */
+    margin-top: -1.75em !important;
+    
+    /* Other */
+    gap: 0;
+}
+
+/* Callout content and title
+   ================================================================================================================== */
+
+div.callout-title div.callout-icon,
+div.callout-title div.callout-title-inner,
+div.callout-title div.callout-fold {
+    /* Layout */
+    padding: 4px;
+    
+    /* Appearance */
+    background-color: var(--background-primary);
+}
+
+div.callout-title div:first-child { padding-left: 8px; }
+div.callout-title div:last-child { padding-right: 8px; }
